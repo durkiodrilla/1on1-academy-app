@@ -1152,6 +1152,11 @@ function showToast(msg, isError) {
 })();
 
 function adminDeleteSchedule(id) {
+  if (!confirm('Remove this slot?')) return;
+  fetch(API_BASE + '/api/schedule/' + id, { method: 'DELETE' })
+    .then(() => { showToast('Slot removed.', false); loadAdminData(); })
+    .catch(() => showToast('Error removing slot.', true));
+}
 
 init();
 </script>
