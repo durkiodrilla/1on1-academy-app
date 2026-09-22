@@ -139,14 +139,6 @@ const GOAL_CONFIG = {
     restStyle: '2-3 min',
     notes: 'This is a strength program — the weight should feel heavy by the last rep. Track your lifts and aim to add weight regularly. Warm up thoroughly before heavy sets.'
   },
-  sports_performance: {
-    name: 'Sports Performance',
-    description: 'Built for athletes who need strength, speed, and power on the field. Combines heavy lifting with plyometrics and conditioning to make you faster and more explosive.',
-    split: { push: 2, pull: 2, legs: 3, core: 2, conditioning: 2 },
-    repRange: '3-8 (strength) / 6-10 (power)',
-    restStyle: '90 sec - 2 min (strength) / 60 sec (conditioning)',
-    notes: 'Do your speed and plyometric work first when you\'re fresh. Lift heavy but prioritize form — you\'re training to perform, not just to lift.'
-  },
   general_fitness: {
     name: 'General Fitness',
     description: 'A balanced program that keeps you strong, mobile, and healthy. Full-body workouts covering all major movement patterns with a mix of strength and conditioning.',
