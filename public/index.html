@@ -201,7 +201,35 @@
     .hero-actions .btn { width:100%; justify-content:center; }
     .acct-grid { grid-template-columns:1fr; }
     .contact-grid { gap:20px 30px; }
-  }
+      }
+
+      /* Plan Model */
+      .plan-model { display:flex; flex-direction:column; gap:0; max-width:900px; margin:0 auto; }
+      .pm-item { display:flex; gap:20px; padding:24px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+      .pm-item:first-child { border-top:1px solid rgba(255,255,255,0.06); }
+      .pm-numb { font-size:42px; font-weight:800; color:#2a5298; line-height:1; min-width:60px; }
+      .pm-body h3 { font-size:20px; font-weight:700; color:#fff; margin:0 0 8px 0; }
+      .pm-body p { font-size:14px; color:#a0aec0; line-height:1.6; margin:0; }
+      .plan-model-cta { text-align:center; margin-top:36px; }
+
+      /* Contact lead-gen sections */
+      .contact-head { text-align:center; }
+      .contact-grid { display:flex; gap:40px; align-items:center; }
+      .contact-left { flex:1; padding:20px 0; }
+      .contact-left p { font-size:15px; color:#a0aec0; line-height:1.7; margin:0 0 16px 0; }
+      .contact-detail { font-size:14px; line-height:1.5; color:#a0aec0; }
+      .contact-detail span { display:block; }
+      .contact-right { flex:1; }
+      .contact-right > div { background:rgba(255,255,255,0.04); border-radius:12px; padding:28px; }
+      .contact-right .btn { width:100%; justify-content:center; }
+      .contact-right .btn-outline { margin-top:10px; }
+
+      @media (max-width:768px) {
+        .contact-grid { flex-direction:column; }
+        .plan-model { gap:0; }
+        .pm-item { flex-direction:column; gap:12px; }
+        .pm-numb { font-size:32px; min-width:auto; }
+      }
 </style>
 </head>
 <body>
@@ -259,34 +287,90 @@
     <section class="section" id="training-section">
       <div class="sec-head">
         <div class="sec-eyebrow">TRAINING & COACHING</div>
-        <h2 class="sec-title">Performance. Personalized.</h2>
+        <h2 class="sec-title">Performance. Personal.</h2>
       </div>
       <div class="train" id="training-grid"></div>
     </section>
-    <div class="rule"></div>
-    <section class="section">
-      <div class="sec-head">
-        <div class="sec-eyebrow">2 DAYS / WEEK</div>
-        <h2 class="sec-title" style="font-size:36px;">Built for your schedule.</h2>
-      </div>
-      <div style="max-width:600px;margin:0 auto;padding:20px 40px;text-align:center;">
-        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">Two days a week is the minimum that moves the needle. You'll get a full-body workout each session — strength, speed, and conditioning — designed around your goals and your life. Show up twice, get better.</p>
-        <div style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.4);">Perfect for: athletes in-season, busy adults, anyone who wants results without living in the gym.</div>
-      </div>
-    </section>
-    <div class="rule"></div>
-    <section class="section">
-      <div class="sec-head">
-        <div class="sec-eyebrow">3 DAYS / WEEK</div>
-        <h2 class="sec-title" style="font-size:36px;">The sweet spot.</h2>
-      </div>
-      <div style="max-width:600px;margin:0 auto;padding:20px 40px;text-align:center;">
-        <p style="font-size:15px;color:rgba(255,255,255,0.7);line-height:1.7;">Three days a week is where most people see real, lasting change. You'll alternate full-body workouts — one day strength-focused, one day speed and power, one day conditioning and work capacity. Consistent, balanced, no burnout.</p>
-        <div style="margin-top:24px;font-size:13px;color:rgba(255,255,255,0.4);">This is the program most of our members run. It's the program that changes bodies and builds confidence.</div>
-      </div>
-    </section>
-    <div class="rule"></div>
-    <section class="section" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:40px;">
+        <div class="rule"></div>
+        <section class="section" id="plan-model">
+          <div class="sec-head">
+            <div class="sec-eyebrow">HOW IT WORKS</div>
+            <h2 class="sec-title">Your Plan. Built for You.</h2>
+          </div>
+          <div class="plan-model">
+            <div class="pm-item">
+              <div class="pm-numb">01</div>
+              <div class="pm-body">
+                <h3>Tell Us About You</h3>
+                <p>Height, weight, goals, experience level, injuries, equipment access — a few quick questions. No forms, no guesswork.</p>
+              </div>
+            </div>
+            <div class="pm-item">
+              <div class="pm-numb">02</div>
+              <div class="pm-body">
+                <h3>We Build Your Plan</h3>
+                <p>Your answers turn into a custom workout program — exercises, sets, reps, and progression built around your body and your schedule.</p>
+              </div>
+            </div>
+            <div class="pm-item">
+              <div class="pm-numb">03</div>
+              <div class="pm-body">
+                <h3>Train With Purpose</h3>
+                <p>Every session has a reason. Every week builds on the last. You're not following a generic PDF — you're following a plan made for you.</p>
+              </div>
+            </div>
+          </div>
+          <div class="plan-model-cta">
+            <p style="color:#a0aec0;font-size:15px;margin:0 0 18px 0;">Your first plan is built in under two minutes.</p>
+            <a href="#pricing-section" class="btn btn-white" onclick="openPlanBuilder()">BUILD YOUR CUSTOM PLAN <span class="arr">→</span></a>
+          </div>
+        </section>
+        <div class="rule"></div>
+        <section class="section" id="contact-2day">
+          <div class="sec-head contact-head">
+            <div class="sec-eyebrow">2 DAYS / WEEK</div>
+            <h2 class="sec-title" style="font-size:36px;">Built for your schedule.</h2>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-left">
+              <p style="font-size:15px;color:#a0aec0;line-height:1.7;">Two days a week is the minimum that moves the needle. You'll get a full-body workout each session — strength, speed, and conditioning — designed around your goals and your life. Show up twice, get better.</p>
+              <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">Perfect for:</span><span style="color:white;font-size:15px;">athletes in-season, busy adults, anyone who wants results without living in the gym.</span></div>
+            </div>
+            <div class="contact-right">
+              <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:28px;">
+                <div style="font-size:13px;color:#a0aec0;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;">Get the plan</div>
+                <div style="font-size:22px;color:white;font-weight:600;margin-bottom:6px;">$99<span style="font-size:13px;color:#a0aec0;font-weight:400;">/month</span></div>
+                <div style="font-size:13px;color:#718096;line-height:1.5;margin-bottom:20px;">2 training sessions per week · coach-led · 45 min each</div>
+                <a href="tel:8055502427" class="btn btn-white" style="width:100%;justify-content:center;">Text or Call 805-550-2427</a>
+                <a href="tel:8058887025" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">Or 805-888-7025</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="rule"></div>
+        <section class="section" id="contact-3day">
+          <div class="sec-head contact-head">
+            <div class="sec-eyebrow">3 DAYS / WEEK</div>
+            <h2 class="sec-title" style="font-size:36px;">The sweet spot.</h2>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-left">
+              <p style="font-size:15px;color:#a0aec0;line-height:1.7;">Three days a week is where most people see real, lasting change. You'll alternate full-body workouts — one day strength-focused, one day speed and power, one day conditioning and work capacity. Consistent, balanced, no burnout.</p>
+              <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">This is the program</span><span style="color:white;font-size:15px;">most of our members run. It's the program that changes bodies and builds confidence.</span></div>
+            </div>
+            <div class="contact-right">
+              <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:28px;">
+                <div style="font-size:13px;color:#a0aec0;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;">Get the plan</div>
+                <div style="font-size:22px;color:white;font-weight:600;margin-bottom:6px;">$149<span style="font-size:13px;color:#a0aec0;font-weight:400;">/month</span></div>
+                <div style="font-size:13px;color:#718096;line-height:1.5;margin-bottom:20px;">3 training sessions per week · coach-led · 45-60 min each</div>
+                <a href="tel:8055502427" class="btn btn-white" style="width:100%;justify-content:center;">Text or Call 805-550-2427</a>
+                <a href="tel:8058887025" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:10px;">Or 805-888-7025</a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="rule"></div>
+        <section class="section" style="border-top:1px solid rgba(255,255,255,0.06);padding-top:40px;">
       <div class="sec-head" style="text-align:center;">
         <div class="sec-eyebrow" style="text-align:center;">GET STARTED</div>
         <h2 class="sec-title" style="text-align:center;font-size:32px;">Which plan fits you?</h2>
@@ -1056,25 +1140,25 @@ function showToast(msg, isError) {
 
 (function renderTraining() {
   var trainings = [
-    { icon: '1', label: 'Gym Training', name: 'Gym Training', desc: 'Coached sessions in the gym — speed, strength, and conditioning built around your sport and your goals.' },
-    { icon: '2', label: '3 Days / Week', name: '3 Days/Week Training', desc: 'A focused 3-day program that balances training with recovery and your schedule. Consistency without burnout.' },
-    { icon: '3', label: '1-on-1 Training', name: '1-on-1 Training', desc: 'Personalized, one-on-one coaching built from scratch for your body, your goals, and your timeline.' }
-  ];
+      { numb: '01', name: '2 Days / Week Training', desc: 'Designed for young athletes in-season. Two focused sessions a week keeps you sharp without burning you out. Speed, strength, and movement — built around your game schedule.' },
+      { numb: '02', name: '3 Days / Week Training', desc: 'The sweet spot for building real athletic performance. Three sessions a week with progression, recovery, and visible results. This is the program that changes athletes.' },
+      { numb: '03', name: '1-on-1 Training', desc: 'Personalized, one-on-one coaching built from scratch for your body, your goals, and your timeline. Everything else is a group — this is yours.' }
+    ];
   var grid = document.getElementById('training-grid');
   if (!grid) return;
   trainings.forEach(function(t) {
     var card = document.createElement('div');
     card.className = 'tcard';
-    var link = document.createElement('a');
-    link.className = 'plan-cta';
-    link.href = GM_SIGNUP;
-    link.target = '_blank';
-    link.innerHTML = 'JOIN TRAINING <span class="arr">→</span>';
-    card.innerHTML = '<div class="ticon">' + t.icon + '</div><div class="tlabel">' + t.label + '</div><h3>' + t.name + '</h3><p>' + t.desc + '</p>';
-    card.appendChild(link);
-    grid.appendChild(card);
-  });
-})();
+        var link = document.createElement('a');
+        link.className = 'plan-cta';
+        link.href = GM_SIGNUP;
+        link.target = '_blank';
+        link.innerHTML = 'GET STARTED <span class="arr">→</span>';
+        card.innerHTML = '<div class="numb">' + t.numb + '</div><div class="tname">' + t.name + '</div><p>' + t.desc + '</p>';
+        card.appendChild(link);
+        grid.appendChild(card);
+      });
+    })()
 
 init();
 </script>
