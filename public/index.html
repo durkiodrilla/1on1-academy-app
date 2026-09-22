@@ -325,9 +325,8 @@
           </div>
           <div class="contact-grid">
             <div class="contact-left">
-              <p style="font-size:15px;color:#a0aec0;line-height:1.7;">In each invigorating session, you'll engage in a variety of exercises specifically curated to develop functional strength and power. From Olympic lifts and plyometrics to kettlebell swings and bodyweight movements, every workout is crafted to maximize muscle engagement, improve coordination, and enhance your ability to generate force efficiently.</p>
-              <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">8 Training Sessions Total</span><span style="color:white;font-size:15px;">2 training sessions per week · coach-led · 45 min each</span></div>
-            </div>
+                      <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">8 Training Sessions Total</span><span style="color:white;font-size:15px;">2 training sessions per week · coach-led · 45 min each</span></div>
+                    </div>
             <div class="contact-right">
               <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:28px;">
                 <div style="font-size:13px;color:#a0aec0;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;">Get the plan</div>
@@ -347,9 +346,8 @@
           </div>
           <div class="contact-grid">
             <div class="contact-left">
-              <p style="font-size:15px;color:#a0aec0;line-height:1.7;">Dive into a dynamic and invigorating beach training experience designed to elevate your athleticism and fitness levels. Our beach training sessions offer a unique and stimulating environment, harnessing the natural elements to push your limits and achieve peak performance.</p>
-              <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">12 Training Sessions Total</span><span style="color:white;font-size:15px;">3 training sessions per week · coach-led · 45-60 min each</span></div>
-            </div>
+                      <div class="contact-detail"><span style="color:#a0aec0;font-size:13px;">12 Training Sessions Total</span><span style="color:white;font-size:15px;">3 training sessions per week · coach-led · 45-60 min each</span></div>
+                    </div>
             <div class="contact-right">
               <div style="background:rgba(255,255,255,0.04);border-radius:12px;padding:28px;">
                 <div style="font-size:13px;color:#a0aec0;text-transform:uppercase;letter-spacing:2px;margin-bottom:18px;">Get the plan</div>
@@ -1129,28 +1127,9 @@ function showToast(msg, isError) {
     grid.appendChild(card);
   });
 })();
+};
 
-(function renderTraining() {
-  var trainings = [
-      { numb: '01', name: '2 Days / Week Training', desc: 'Designed for young athletes in-season. Two focused sessions a week keeps you sharp without burning you out. Speed, strength, and movement — built around your game schedule.' },
-      { numb: '02', name: '3 Days / Week Training', desc: 'The sweet spot for building real athletic performance. Three sessions a week with progression, recovery, and visible results. This is the program that changes athletes.' },
-      { numb: '03', name: '1-on-1 Training', desc: 'Personalized, one-on-one coaching built from scratch for your body, your goals, and your timeline. Everything else is a group — this is yours.' }
-    ];
-  var grid = document.getElementById('training-grid');
-  if (!grid) return;
-  trainings.forEach(function(t) {
-    var card = document.createElement('div');
-    card.className = 'tcard';
-        var link = document.createElement('a');
-        link.className = 'plan-cta';
-        link.href = GM_SIGNUP;
-        link.target = '_blank';
-        link.innerHTML = 'GET STARTED <span class="arr">→</span>';
-        card.innerHTML = '<div class="numb">' + t.numb + '</div><div class="tname">' + t.name + '</div><p>' + t.desc + '</p>';
-        card.appendChild(link);
-        grid.appendChild(card);
-      });
-    })()
+function adminDeleteSchedule(id) {
 
 init();
 </script>
