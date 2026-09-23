@@ -635,41 +635,38 @@ app.post('/api/workouts/generate', (req, res) => {
   const data = loadData();
   const { memberId, answers } = req.body;
 
-  if (!memberId || !answers) {
-    return res.status(400).json({ error: 'memberId and answers required' });
-  }
-
-  const member = data.members.find(m => m.id === memberId);
-  if (!member) {
-    return res.status(404).json({ error: 'Member not found' });
+  if (!answers) {
+    return res.status(400).json({ error: 'answers required' });
   }
 
   // Generate the plan
   const plan = generatePlan(answers);
 
-  // Save to member's plans
-  if (!member.plans) member.plans = [];
-  const planId = 'plan-' + genId();
-  plan.id = planId;
-  member.plans.push(plan);
-
-  // Also create workout entries for each day
-  if (!member.workouts) member.workouts = [];
-  plan.weeks.forEach((week, idx) => {
-    const workout = {
-      id: 'wp-' + planId + '-' + idx,
-      name: `${plan.name} — ${week.day}`,
-      description: week.focus + ' | ' + plan.description.substring(0, 100) + '...',
-      exercises: week.exercises.map(e => ({ ...e, done: false })),
-      assignedAt: new Date().toISOString(),
-      planId: planId,
-      day: week.day,
-      focus: week.focus
-    };
-    member.workouts.push(workout);
-  });
-
-  saveData(data);
+  // If memberId provided and member exists, save the plan to their account
+  if (memberId) {
+    const member = data.members.find(m => m.id === memberId);
+    if (member) {
+      if (!member.plans) member.plans = [];
+      const planId = 'plan-' + genId();
+      plan.id = planId;
+      member.plans.push(plan);
+      if (!member.workouts) member.workouts = [];
+      plan.weeks.forEach((week, idx) => {
+        const workout = {
+          id: 'wp-' + planId + '-' + idx,
+          name: `${plan.name} — ${week.day}`,
+          description: week.focus + ' | ' + plan.description.substring(0, 100) + '...',
+          exercises: week.exercises.map(e => ({ ...e, done: false })),
+          assignedAt: new Date().toISOString(),
+          planId: planId,
+          day: week.day,
+          focus: week.focus
+        };
+        member.workouts.push(workout);
+      });
+      saveData(data);
+    }
+  }
 
   res.json({
     plan: plan,
