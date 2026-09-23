@@ -1279,14 +1279,14 @@ function showToast(msg, isError) {
 function openPlanBuilder() {
   var m = document.getElementById('plan-builder-modal');
   if (!m) return;
-  var stepsEl = document.getElementById('pb-steps');
-  var pbarEl = document.getElementById('pb-progress');
-  var navEl = document.getElementById('pb-nav');
-  var backBtn = document.getElementById('pb-back-btn');
-  var nextBtn = document.getElementById('pb-next-btn');
-  var saveWrap = document.getElementById('pb-save-btn-wrap');
-  var saveNote = document.getElementById('pb-save-note');
-  var saveBtn = document.getElementById('pb-save-btn');
+  stepsEl = document.getElementById('pb-steps');
+  pbarEl = document.getElementById('pb-progress');
+  navEl = document.getElementById('pb-nav');
+  backBtn = document.getElementById('pb-back-btn');
+  nextBtn = document.getElementById('pb-next-btn');
+  saveWrap = document.getElementById('pb-save-btn-wrap');
+  saveNote = document.getElementById('pb-save-note');
+  saveBtn = document.getElementById('pb-save-btn');
   if (!stepsEl || !pbarEl || !navEl) return;
   closeModal('plan-builder-modal');
   setTimeout(function() {
