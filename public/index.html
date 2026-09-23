@@ -1274,7 +1274,9 @@ function showToast(msg, isError) {
   const toast = document.getElementById('toast');
   toast.textContent = msg;
   toast.className = 'toast show' + (isError ? ' error' : '');
-  function openPlanBuilder() {
+  setTimeout(function() { toast.classList.remove('show'); }, 2800);
+}
+function openPlanBuilder()
   var m = document.getElementById('plan-builder-modal');
   if (!m) return;
   var stepsEl = document.getElementById('pb-steps');
