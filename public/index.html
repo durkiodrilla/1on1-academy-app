@@ -1276,7 +1276,7 @@ function showToast(msg, isError) {
   toast.className = 'toast show' + (isError ? ' error' : '');
   setTimeout(function() { toast.classList.remove('show'); }, 2800);
 }
-function openPlanBuilder()
+function openPlanBuilder() {
   var m = document.getElementById('plan-builder-modal');
   if (!m) return;
   var stepsEl = document.getElementById('pb-steps');
@@ -1478,9 +1478,6 @@ var STEPS = [
   if (backBtn) backBtn.onclick = prevStepFn;
   if (saveBtn) saveBtn.onclick = savePlanToAccount;
 })();
-
-setTimeout(function() { toast.classList.remove('show'); }, 2800);
-}
 
 (function renderPricing() {
   var plans = [
