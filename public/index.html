@@ -1375,7 +1375,7 @@ function doGeneratePlan() {
   }).then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.error) throw new Error(data.error);
-      if (!data.plan || !data.plan.days || data.plan.days.length === 0) throw new Error('No plan generated.');
+      if (!data.plan || !data.plan.weeks || data.plan.weeks.length === 0) throw new Error('No plan generated.');
       return data.plan;
     });
 }
@@ -1405,16 +1405,16 @@ function renderGeneratedPlan() {
   var html = '';
   html += '<div class="pb-plan-card">';
   html += '<h3 class="pb-plan-name">' + esc(p.name || 'Your Custom Plan') + '</h3>';
-  html += '<p class="pb-plan-sub">' + esc(p.subtitle || '') + '</p>';
-  if (p.notes && p.notes.length > 0) { html += '<div class="pb-plan-note"><span class="lbl">Notes</span><p>' + esc(p.notes.join(' ')) + '</p></div>'; }
-  if (p.days && p.days.length > 0) {
-    for (var i = 0; i < p.days.length; i++) {
+  html += '<p class="pb-plan-sub">' + esc(p.description || '') + '</p>';
+  if (p.guidelines) { html += '<div class="pb-plan-note"><span class="lbl">Guidelines</span><p>' + esc(p.guidelines) + '</p></div>'; }
+  if (p.weeks && p.weeks.length > 0) {
+    for (var i = 0; i < p.weeks.length; i++) {
       (function(i) {
-        var d = p.days[i]; html += '<div class="pb-day">'; html += '<div class="pb-day-h"><span class="dn">Day ' + (i+1) + '</span>' + esc(d.name || '') + '</div>';
+        var d = p.weeks[i]; html += '<div class="pb-day">'; html += '<div class="pb-day-h"><span class="dn">' + esc(d.day || '') + '</span> — ' + esc(d.focus || '') + '</div>';
         if (d.exercises && d.exercises.length > 0) {
           for (var j = 0; j < d.exercises.length; j++) {
             (function(j) {
-              var e = d.exercises[j]; html += '<div class="pb-ex">'; html += '<div class="pb-ex-l"><div class="pb-ex-n">' + esc(e.name || '') + '</div>'; html += '<div class="pb-ex-d">' + esc(e.detail || '') + '</div></div>'; html += '<div class="pb-ex-r">' + esc(e.reps || '') + '</div>'; html += '</div>';
+              var e = d.exercises[j]; html += '<div class="pb-ex">'; html += '<div class="pb-ex-l"><div class="pb-ex-n">' + esc(e.name || '') + '</div>'; html += '<div class="pb-ex-d">' + esc(e.notes || '') + '</div></div>'; html += '<div class="pb-ex-r">' + esc(e.reps || '') + '</div>'; html += '</div>';
             })(j);
           }
         }
